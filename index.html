@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghiền Muzik — Trình phát nhạc đa nguồn + AI</title>
+<meta name="description" content="Trình phát nhạc Flutter đa nguồn cho Android: nhạc máy, trực tuyến, radio, podcast, trợ lý AI miễn phí.">
+<meta property="og:title" content="Ghiền Muzik">
+<meta property="og:description" content="Nhạc của bạn, theo cách của bạn — đa nguồn + AI miễn phí.">
+<style>
+  :root{ color-scheme:dark; --bg:#0E0B1A; --purple:#8A5CFF; --purple2:#B79CFF; --card:#1a1430; --line:#2a2342; --muted:#9a93b0; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:#E7E3F2;
+    font-family:-apple-system,Segoe UI,Roboto,Inter,sans-serif; line-height:1.65; overflow-x:hidden; }
+  a{ color:var(--purple2); text-decoration:none; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 22px; }
+
+  /* glow background */
+  .glow{ position:fixed; inset:0; z-index:-1;
+    background:
+      radial-gradient(600px 400px at 15% -5%, rgba(138,92,255,.35), transparent 70%),
+      radial-gradient(700px 500px at 100% 0%, rgba(46,24,96,.7), transparent 60%),
+      linear-gradient(180deg,#160f2b,#0E0B1A); }
+
+  /* hero */
+  header{ text-align:center; padding:72px 0 28px; }
+  .logo{ width:104px;height:104px;border-radius:26px;margin:0 auto;
+    background:linear-gradient(135deg,#8A5CFF,#2E1860);display:flex;align-items:center;
+    justify-content:center;font-size:50px; box-shadow:0 18px 50px rgba(138,92,255,.45); }
+  h1{ font-size:2.7rem;margin:.35em 0 .05em;letter-spacing:-.5px;
+    background:linear-gradient(90deg,#fff,#C9B6FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+  .tag{ color:var(--purple2); font-size:1.2rem; margin:0 0 1.4em; }
+  .btn{ display:inline-block; background:linear-gradient(135deg,#8A5CFF,#6a3df0); color:#fff;
+    padding:14px 26px; border-radius:32px; font-weight:700; margin:6px; transition:transform .15s, box-shadow .15s;
+    box-shadow:0 10px 26px rgba(138,92,255,.4); }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(138,92,255,.55); }
+  .btn.ghost{ background:#221b3a; box-shadow:none; border:1px solid var(--line); }
+  .pills{ margin-top:18px;color:var(--muted);font-size:.92rem; }
+  .pills span{ display:inline-block;background:#1c1636;border:1px solid var(--line);
+    border-radius:20px;padding:5px 13px;margin:4px; }
+
+  /* screenshots */
+  .shots{ display:flex; gap:20px; overflow-x:auto; padding:34px 22px 10px; scroll-snap-type:x mandatory; justify-content:center; }
+  .shots img{ width:218px; flex:0 0 auto; border-radius:26px; border:1px solid var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.55); scroll-snap-align:center; transition:transform .2s; }
+  .shots img:hover{ transform:translateY(-6px) scale(1.02); }
+  @media(max-width:760px){ .shots{ justify-content:flex-start; } }
+
+  /* sections */
+  section{ padding:38px 0; }
+  h2{ font-size:1.5rem; text-align:center; margin:.2em 0 1em; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+  .feat{ background:linear-gradient(160deg,#1c1636,#15102a); border:1px solid var(--line);
+    border-radius:18px; padding:20px; }
+  .feat .ic{ font-size:1.7rem; } .feat h3{ margin:.4em 0 .2em; font-size:1.06rem; }
+  .feat p{ margin:0; color:var(--muted); font-size:.93rem; }
+
+  .ai{ text-align:center; background:linear-gradient(135deg,rgba(138,92,255,.18),rgba(46,24,96,.25));
+    border:1px solid var(--line); border-radius:22px; padding:34px 22px; }
+
+  footer{ text-align:center; color:var(--muted); font-size:.88rem; padding:40px 22px 70px; border-top:1px solid var(--line); margin-top:30px; }
+  code{ background:#221b3a; padding:2px 7px; border-radius:6px; font-size:.85em; }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<header>
+  <div class="wrap">
+    <div class="logo">🎵</div>
+    <h1>Ghiền Muzik</h1>
+    <p class="tag">Nhạc của bạn, theo cách của bạn — đa nguồn&nbsp;+&nbsp;AI miễn phí.</p>
+    <a class="btn" href="./ghien-muzik-v1.0.0.apk">⬇&nbsp; Tải APK</a>
+    <a class="btn ghost" href="privacy-policy.html">🔒&nbsp; Quyền riêng tư</a>
+    <div class="pills">
+      <span>📱 Android</span><span>🎙️ Radio &amp; Podcast</span><span>🤖 Trợ lý AI</span>
+      <span>⬇ Nghe offline</span><span>🆓 Miễn phí</span>
+    </div>
+  </div>
+</header>
+
+<div class="shots">
+  <img src="screenshots/player.png" alt="Trình phát" loading="lazy">
+  <img src="screenshots/library.png" alt="Thư viện" loading="lazy">
+  <img src="screenshots/lyrics.png" alt="Lyric &amp; visualizer" loading="lazy">
+  <img src="screenshots/online.png" alt="Nhạc trực tuyến" loading="lazy">
+</div>
+
+<section class="wrap">
+  <h2>Tính năng nổi bật</h2>
+  <div class="grid">
+    <div class="feat"><div class="ic">📚</div><h3>Library đa nguồn</h3><p>Gom nhạc máy, trực tuyến, URL, radio, yêu thích, đã tải — duyệt theo Artist/Album/Genre.</p></div>
+    <div class="feat"><div class="ic">📻</div><h3>Radio &amp; Podcast</h3><p>Đài Internet (lọc 🇻🇳 VOV, VOH…) + podcast RSS, có mục 🎓 học tiếng Anh.</p></div>
+    <div class="feat"><div class="ic">🤖</div><h3>Trợ lý AI</h3><p>Tạo playlist, dịch lyric, phân loại, gợi ý "Dành cho bạn", điều khiển bằng lời.</p></div>
+    <div class="feat"><div class="ic">⬇</div><h3>Nghe offline</h3><p>Tải bài/đài + cache stream (50/500/∞ MB) để nghe khi mất mạng.</p></div>
+    <div class="feat"><div class="ic">🪞</div><h3>Lyric &amp; hiệu ứng</h3><p>Lyric đồng bộ, phủ ảnh, nổi trong suốt + visualizer + màu động theo ảnh bìa.</p></div>
+    <div class="feat"><div class="ic">🎧</div><h3>Chăm sóc âm lượng</h3><p>Cân bằng độ to giữa các bài + nhắc bảo vệ thính lực theo tai nghe/loa.</p></div>
+    <div class="feat"><div class="ic">🎚️</div><h3>Trình phát đầy đủ</h3><p>Equalizer, tốc độ, hàng đợi, hẹn giờ ngủ, cử chỉ vuốt, phát nền.</p></div>
+    <div class="feat"><div class="ic">🔌</div><h3>Mở rộng dễ</h3><p>Kiến trúc Source Adapter — sẵn sàng cắm Jellyfin, Navidrome, WebDAV, SMB…</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="ai">
+    <h2 style="margin-top:0">🤖 Bật AI miễn phí</h2>
+    <p>Vào <strong>Cài đặt → AI scan</strong>, dán API key free của
+      <a href="https://console.groq.com/keys">Groq</a> hoặc
+      <a href="https://openrouter.ai/keys">OpenRouter</a>.<br>
+      Một key chạy mọi tính năng AI — và key chỉ lưu <strong>trên máy bạn</strong>.</p>
+    <a class="btn" href="./ghien-muzik-v1.0.0.apk">Tải về dùng thử</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Ghiền Muzik · <code>io.github.mittohoa.ghienmuzik</code><br>
+    <a href="https://github.com/mittohoa/ghienmuzik-app">GitHub</a> ·
+    <a href="privacy-policy.html">Quyền riêng tư</a> ·
+    <a href="mailto:mittohoa@gmail.com">Liên hệ</a>
+  </div>
+</footer>
+
+<!-- PostHog Web Analytics (ẩn danh) — DÙNG CHUNG project với app để có 1 bảng insight
+     thống nhất (xem trang + cài + tính năng). Cách bật: app.posthog.com → tạo project →
+     Project Settings → copy "Project API Key" + Host → thay 'PH_PROJECT_API_KEY' và api_host. -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture identify alias people.set people.set_once register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset group".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_oreV7DspFLpyxm8RAwnvUWWsvvjukd25G9d65inn38Dd', {api_host: 'https://us.i.posthog.com'});
+</script>
+</body>
+</html>
